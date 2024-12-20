@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Profiles</title>
+  <style>
+    /* Universal Reset */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Gradient background */
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 1rem;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .nav-buttons button {
+      background-color: white;
+      color: #3d011b;
+      border: 1px solid #3d011b;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #491b1b;
+      color: white;
+    }
+
+    .main-content {
+      margin-top: 120px; /* To account for fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .profile-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 300px;
+      margin: 0 auto;
+    }
+
+    .profile-info {
+      padding: 20px;
+    }
+
+    .profile-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .profile-title {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .profile-description {
+      font-size: 16px;
+      color: #ddd;
+      margin-bottom: 15px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: white;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #0077b5; /* LinkedIn color */
+      transition: background-color 0.3s;
+    }
+
+    .social-icons a:hover {
+      background-color: #005582;
+    }
+
+    .instagram-button {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .instagram-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .instagram-button:active {
+      transform: scale(0.95);
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 10px 5%;
+      }
+
+      .nav-buttons {
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .main-content {
+        padding: 15px 5%;
+      }
+
+      .profile-card {
+        width: 100%;
+      }
+
+      .profile-name {
+        font-size: 22px;
+      }
+
+      .profile-title {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 20px;
+      }
+
+      .nav-buttons button {
+        font-size: 14px;
+        padding: 8px 15px;
+      }
+
+      .profile-name {
+        font-size: 20px;
+      }
+
+      .profile-title {
+        font-size: 14px;
+      }
+
+      .profile-description {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>RUNNERS TEAM</h1>
+</header>
+
+<div class="main-content">
+  <div class="team-container">
+    <!-- Profile 1 -->
+    <div class="profile-card">
+      <img src="ahmed.jpg" alt="John Doe" class="profile-image">
+      <div class="profile-info">
+        <h2 class="profile-name">AHMED MARNAOUI</h2>
+        <p class="profile-title">ROLE: MARKETING</p>
+      </div>
+    </div>
+
+    <!-- Profile 2 -->
+    <div class="profile-card">
+      <img src="raed.jpg" alt="John Doe" class="profile-image">
+      <div class="profile-info">
+        <h2 class="profile-name">RAED KHALFAOUI</h2>
+        <p class="profile-title">ROLE: Community <br> Manager</p>
+      </div>
+    </div>
+
+    <!-- Profile 3 -->
+    <div class="profile-card">
+      <img src="youssef.jpg" alt="John Doe" class="profile-image">
+      <div class="profile-info">
+        <h2 class="profile-name">YOUSSEF BEN HARIZ</h2>
+        <p class="profile-title">ROLE: Marketing</p>
+      </div>
+    </div>
+
+    <!-- Profile 4 -->
+    <div class="profile-card">
+      <img src="rola.jpg" alt="John Doe" class="profile-image">
+      <div class="profile-info">
+        <h2 class="profile-name">ROLA ALLAMEDDIN BABAY</h2>
+        <p class="profile-title">ROLE: Chef de <br> Produit</p>
+      </div>
+    </div>
+
+    <!-- Profile 5 -->
+    <div class="profile-card">
+      <img src="ibrahim.jpg" alt="John Doe" class="profile-image">
+      <div class="profile-info">
+        <h2 class="profile-name">IBRAHIM HAMROUNI</h2>
+        <p class="profile-title">ROLE: Directeur <br> Commercial</p>
+      </div>
+    </div>
+
+    <!-- Profile 6 -->
+    <div class="profile-card">
+      <img src="rayen.png" alt="John Doe" class="profile-image">
+      <div class="profile-info">
+        <h2 class="profile-name">RAYEN LETAIEF</h2>
+        <p class="profile-title">ROLE: Graphiste</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 RUNNERS TEAM. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

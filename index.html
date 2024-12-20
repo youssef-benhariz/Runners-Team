@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Shoe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298); /* Gradient background */
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .main-content {
+            margin-top: 120px; /* To account for fixed header */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .product-highlight {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            text-align: center;
+            animation: fadeIn 1.5s;
+        }
+
+        .product-highlight img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .product-highlight h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-highlight p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #ff5733;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #c43d22;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #1f0c0c;
+            color: white;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            flex-wrap: wrap; /* Permet au contenu de s'ajuster sur mobile */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            flex: 1; /* Permet de prendre l’espace disponible */
+            text-align: center;
+        }
+
+        header .nav-buttons {
+            display: flex;
+            gap: 10px;
+            flex: 1; /* Permet d’occuper l’espace disponible */
+            justify-content: flex-end; /* Alignement des boutons à droite */
+        }
+
+        header .nav-buttons button {
+            background-color: white;
+            color: #3d011b;
+            border: 1px solid #3d011b;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        header .nav-buttons button:hover {
+            background-color: #491b1b;
+            color: white;
+        }
+
+        /* Main Content Styling */
+        main {
+            padding: 20px 10%;
+        }
+
+        main h2 {
+            color: #333;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        main p {
+            color: #555;
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* Event Images */
+        .event {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .event img {
+            width: 100%;
+            max-width: 600px; /* Limite la largeur sur les écrans larges */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event img:hover {
+            transform: scale(1.05); /* Agrandissement interactif au survol */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Accentue l'ombre au survol */
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Empile le contenu du header sur mobile */
+                padding: 10px 5%;
+            }
+
+            header .nav-buttons {
+                justify-content: center; /* Centrer les boutons sur mobile */
+                margin-top: 10px;
+            }
+
+            main {
+                padding: 15px 5%;
+            }
+
+            main h2 {
+                font-size: 24px;
+            }
+
+            main p {
+                font-size: 16px;
+            }
+
+            .event img {
+                max-width: 100%; /* Utilise toute la largeur disponible sur mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            header .nav-buttons button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            main h2 {
+                font-size: 22px;
+            }
+
+            main p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>RUNNERS TEAM </h1>
+    <div class="nav-buttons">
+        <button onclick="location.href='grp.html'">Notre Groupe</button>
+        <button onclick="location.href='vds.html'">publicité</button>
+    </div>
+</header>
+
+<div class="main-content">
+    <div class="product-highlight">
+        <img src="shoes.jpg" alt="Magic Shoe">
+        <h2>Découvrez le confort ultime</h2>
+        <p>Les Magic Shoes sont conçues pour offrir un confort et un style inégalés. Avec une technologie avancée qui s'adapte à chaque pas, vos pieds vous remercieront.</p>
+        <button class="cta-button"><a href="infographie.html">Achetez maintenant</a></button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Magic Shoe. Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>

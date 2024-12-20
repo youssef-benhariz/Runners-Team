@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Magasin de Chaussures</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-preview {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-preview img:hover {
+            transform: scale(1.5);
+        }
+
+        form {
+            flex: 1;
+            margin-left: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        input:hover, select:hover {
+            border-color: #007BFF;
+        }
+
+        input:focus, select:focus {
+            background-color: #e0f7fa;
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        .color-input {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .color-input label {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .color-input label:hover {
+            transform: scale(1.1);
+        }
+
+        .color-input input[type="radio"] {
+            display: none;
+        }
+
+        .color-input input[type="radio"]:checked + label {
+            border-color: #007BFF;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>RUNNERS TEAM</h1>
+</header>
+
+<div class="container">
+    <div class="image-preview">
+        <img src="shoes.jpg" alt="Image de Chaussure">
+    </div>
+    
+    <form id="shoeForm">
+        <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="number">Numéro de Téléphone</label>
+            <input type="tel" id="number" name="number" placeholder="Entrez votre numéro de téléphone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="city">Ville</label>
+            <input type="text" id="city" name="city" placeholder="Entrez votre ville" required>
+        </div>
+
+        <div class="form-group">
+            <label for="color">Couleur des Chaussures</label>
+            <div class="color-input">
+                <input type="radio" id="color-black" name="color" value="black" required>
+                <label for="color-black" style="background-color: black;"></label>
+
+                <input type="radio" id="color-white" name="color" value="white">
+                <label for="color-white" style="background-color: white; border: 1px solid #ccc;"></label>
+
+                <input type="radio" id="color-red" name="color" value="red">
+                <label for="color-red" style="background-color: red;"></label>
+
+                <input type="radio" id="color-blue" name="color" value="blue">
+                <label for="color-blue" style="background-color: blue;"></label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="qte">Quantité</label>
+            <input type="number" id="qte" name="qte" min="1" max="10" placeholder="Entrez la quantité" required>
+        </div>
+        <div class="form-group">
+            <label for="qte">Taille</label>
+            <input type="number" id="qte" name="qte" min="38" max="45" placeholder="Entrez la quantité" required>
+        </div>
+
+        <button type="submit" class="submit-btn">Envoyer</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 RUNNERS TEAM. Tous droits réservés.</p>
+</footer>
+
+<script>
+    document.getElementById('shoeForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Validation du nom
+        const name = document.getElementById('name').value;
+        const namePattern = /^[a-zA-Z\s]+$/;
+        if (!namePattern.test(name)) {
+            alert('Le nom ne doit pas contenir de chiffres ou de symboles.');
+            return;
+        }
+
+        // Validation du numéro de téléphone
+        const number = document.getElementById('number').value;
+        const numberPattern = /^\d{8}$/;
+        if (!numberPattern.test(number)) {
+            alert('Le numéro de téléphone doit contenir exactement 8 chiffres.');
+            return;
+        }
+
+        // Validation de la couleur
+        const colorSelected = document.querySelector('input[name="color"]:checked');
+        if (!colorSelected) {
+            alert('Veuillez sélectionner une couleur pour les chaussures.');
+            return;
+        }
+
+        // Validation de la quantité
+        const qte = document.getElementById('qte').value;
+        if (qte <= 0) {
+            alert('La quantité doit être supérieure à 0.');
+            return;
+        }
+
+        alert('Commande réussie !');
+
+        // Réinitialisation du formulaire
+        document.getElementById('shoeForm').reset();
+    });
+</script>
+
+</body>
+</html>
